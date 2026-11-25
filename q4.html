@@ -16,8 +16,8 @@ Visible in the "inspect" developer tools. Finish the custom element to put the d
     class DaysToNewYears extends HTMLElement{
         connectedCallback(){
             let today=new Date();
-            let nNewYearsEve=new Date(today.getFullYear(), 11, 31);
-            let nSeconds = 1000*60*60*24;
+            let nNewYearsEve=new Date(today.getFullYear() + 1, 0, 1);
+            let nSeconds = 1000 * 60 * 60 * 24;
             let nDaysLeft = Math.ceil((nNewYearsEve.getTime()-today.getTime())/(nSeconds));
         this.innerHTML = `<h1>${daysLeft} days until New Year's!</h1>`;
             console.log(nDaysLeft); //logs the value we are looking for in our heading
